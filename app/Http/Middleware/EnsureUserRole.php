@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
+
+class EnsureUserRole
+{
+    public function handle(Request $request, Closure $next, ...$roles): Response
+    {
+        if (! Auth::check()) {
+            abort(403, 'Az oldal megtekintéséhez be kell jelentkezni.');
+        }
+
+        if (! in_array(Auth::user()->role, $roles, true)) {
+            abort(403, 'Nincs jogosultságod ehhez az oldalhoz.');
+        }
+
+        return $next($request);
+    }
+}
