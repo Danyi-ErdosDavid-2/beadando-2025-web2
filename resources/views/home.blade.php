@@ -3,7 +3,6 @@
 @section('content')
     <section class="row g-4 align-items-center mb-5">
         <div class="col-md-6">
-            <p class="text-uppercase text-primary fw-semibold small">Laravel 12 + Bootswatch Lux</p>
             <h1 class="display-4 fw-bold mb-3">VizsgaPortál – Érettségi statisztikák egy helyen</h1>
             <p class="lead">A beadandó alkalmazás a Web-programozás-2 elméleti anyaga alapján készült, MVC architektúrával,
                 ORM-mel és reszponzív felülettel. A látogatók áttekinthetik az érettségi adatbázist, üzenetet küldhetnek,
